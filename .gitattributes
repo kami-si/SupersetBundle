@@ -4,8 +4,8 @@
 
 composer.lock export-ignore
 /tests/ export-ignore
-/vendor export-ignore
-/var export-ignore
+/vendor/ export-ignore
+/var/ export-ignore
 
 .php-cs-fixer.cache export-ignore
 .php-cs-fixer.dist.php export-ignore
