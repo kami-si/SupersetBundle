@@ -1,16 +1,11 @@
 .gitignore export-ignore
-.idea/ export-ignore
-.vscode/ export-ignore
 
 composer.lock export-ignore
-/tests/ export-ignore
-/vendor/ export-ignore
-/var/ export-ignore
 
-.php-cs-fixer.cache export-ignore
+/tests/ export-ignore
+
 .php-cs-fixer.dist.php export-ignore
 
-.phpunit.result.cache export-ignore
 phpunit.xml.dist export-ignore
 
 phpstan.dist.neon export-ignore
