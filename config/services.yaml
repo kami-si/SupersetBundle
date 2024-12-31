@@ -1,0 +1,38 @@
+when@test:
+  services:
+    # Configuration for Prophecy
+    prophecy.prophet:
+      class: Prophecy\Prophet
+
+    Doctrine\ORM\EntityManagerInterface:
+      class: Prophecy\Prophet\Prophet
+      factory: [ 'Hydra\SupersetBundle\Tests\MockCreator', 'createEntityManagerMock' ]
+      arguments:
+        $prophet: '@prophecy.prophet'
+
+    Doctrine\Persistence\ManagerRegistry:
+      class: Prophecy\Prophet\Prophet
+      factory: [ 'Hydra\SupersetBundle\Tests\MockCreator', 'createManagerRegistryMock' ]
+      arguments:
+        $prophet: '@prophecy.prophet'
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Hydra\SupersetBundle\:
+    resource: '../src/'
+    exclude:
+      - '../src/DependencyInjection/'
+      - '../src/Entity/'
+
+  Hydra\SupersetBundle\MessageHandler\:
+    resource: '../src/MessageHandler'
+    tags: ['messenger.message_handler']
+
+  Hydra\SupersetBundle\Service\FileProcessor:
+    public: true
+    arguments:
+      $dir: '%kernel.project_dir%/public/Superset'
