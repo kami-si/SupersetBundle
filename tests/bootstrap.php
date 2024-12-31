@@ -1,6 +1,6 @@
 <?php
 
-namespace Hydra\SupersetBundle\Tests;
+use Hydra\SupersetBundle\Tests\TestKernel;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 

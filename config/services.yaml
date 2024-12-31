@@ -28,11 +28,13 @@ services:
       - '../src/DependencyInjection/'
       - '../src/Entity/'
 
-  Hydra\SupersetBundle\MessageHandler\:
-    resource: '../src/MessageHandler'
-    tags: ['messenger.message_handler']
-
   Hydra\SupersetBundle\Service\FileProcessor:
     public: true
     arguments:
       $dir: '%kernel.project_dir%/public/Superset'
+
+  Hydra\SupersetBundle\Command\CaopImportCommand:
+    tags:
+      - { name: 'console.command', command: 'superset:caop:import' }
+      - { name: 'console.command', command: 'su:ca:im' }
+      - { name: 'console.command', command: 's:c:i' }
