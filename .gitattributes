@@ -1,4 +1,5 @@
 .gitignore export-ignore
+.gitattributes export-ignore
 .git/ export-ignore
 .idea/ export-ignore
 .vscode/ export-ignore
