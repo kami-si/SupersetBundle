@@ -7,7 +7,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class SupersetExtension extends Extension
+class HydraSupersetExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -16,6 +16,6 @@ class SupersetExtension extends Extension
             new FileLocator(__DIR__ . '/../../config'),
         );
 
-        $loader->load('services.yaml');
+        $loader->load('superset.yaml');
     }
 }

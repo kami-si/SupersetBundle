@@ -21,6 +21,6 @@ final class TestKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader): void
     {
-        $loader->load(__DIR__ . '/../config/services.yaml');
+        $loader->load(__DIR__ . '/../config/superset.yaml');
     }
 }
