@@ -1,7 +1,5 @@
 .gitignore export-ignore
 
-composer.lock export-ignore
-
 /tests/ export-ignore
 
 /bin/ export-ignore
