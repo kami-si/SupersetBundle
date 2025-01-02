@@ -138,7 +138,7 @@ final readonly class FileProcessor
 
                     $batch = [];
 
-                    foreach (array_slice($caops, 0, 5000) as $i => $caop) {
+                    foreach ($caops as $i => $caop) {
                         $batch[] = $caop;
 
                         if (count($batch) === $batchSize || $i === count($caops) - 1) {

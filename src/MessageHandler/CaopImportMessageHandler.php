@@ -14,6 +14,11 @@ final readonly class CaopImportMessageHandler
     public function __invoke(CaopImportMessage $message): void
     {
         $results = $this->fileProcessor->importCaopData(); // todo do something with response
-        echo 'Import results: ' . print_r($results['files'], true);
+
+        if ($results['success']) {
+            echo 'Import results: ' . print_r($results['files'], true);
+        } else {
+            echo 'Error: ' . $results['message'];
+        }
     }
 }
