@@ -1,21 +1,3 @@
-when@test:
-  services:
-    # Configuration for Prophecy
-    prophecy.prophet:
-      class: Prophecy\Prophet
-
-    Doctrine\ORM\EntityManagerInterface:
-      class: Prophecy\Prophet\Prophet
-      factory: [ 'Hydra\SupersetBundle\Tests\MockCreator', 'createEntityManagerMock' ]
-      arguments:
-        $prophet: '@prophecy.prophet'
-
-    Doctrine\Persistence\ManagerRegistry:
-      class: Prophecy\Prophet\Prophet
-      factory: [ 'Hydra\SupersetBundle\Tests\MockCreator', 'createManagerRegistryMock' ]
-      arguments:
-        $prophet: '@prophecy.prophet'
-
 services:
   _defaults:
     autowire: true

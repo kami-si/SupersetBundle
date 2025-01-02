@@ -1,0 +1,15 @@
+services:
+  prophecy.prophet:
+    class: Prophecy\Prophet
+
+  Doctrine\ORM\EntityManagerInterface:
+    class: Prophecy\Prophet\Prophet
+    factory: [ 'Hydra\SupersetBundle\Tests\MockCreator', 'createEntityManagerMock' ]
+    arguments:
+      $prophet: '@prophecy.prophet'
+
+  Doctrine\Persistence\ManagerRegistry:
+    class: Prophecy\Prophet\Prophet
+    factory: [ 'Hydra\SupersetBundle\Tests\MockCreator', 'createManagerRegistryMock' ]
+    arguments:
+      $prophet: '@prophecy.prophet'
