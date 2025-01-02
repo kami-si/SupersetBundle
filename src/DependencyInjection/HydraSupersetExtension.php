@@ -22,6 +22,5 @@ class HydraSupersetExtension extends Extension
         } catch (Exception $e) {
             die('Unable to load config file superset.yaml: ' . $e->getMessage());
         }
-
     }
 }
