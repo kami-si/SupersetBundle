@@ -23,6 +23,11 @@ doit être placé dans ce dépôt git, et non dans celui d'Hydra.
 
 Le scheduler symfony (cron etc...) et l'interface graphique quant à eux ne sont pas ici, et doivent être dans Hydra. 
 
+D'autre part c'est un bundle qui a pour vocation à se retrouver parmis les vendor d'Hydra, ce qui veut dire que tout 
+le code ici n'est pas forcément nécessaire à son bon fonctionnement (les tests par exemple sont simplement utiles 
+pour vérifier le bon fonctionnement de votre code en standalone). Si vous crééez ou rajoutez des fichiers inutiles 
+en production il faudra les ajouter dans le fichier `.gitattributes` accompagnés de la mention `export-ignore`.
+
 ### 2. Branche
 
 La première étape est de choisir une issue, créer une branche et lier les deux. Par exemple l'issue n°174 aura une 
