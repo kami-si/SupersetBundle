@@ -31,7 +31,7 @@ services:
   Hydra\SupersetBundle\Service\FileProcessor:
     public: true
     arguments:
-      $dir: '%kernel.project_dir%/public/Superset'
+      $dir: '%kernel.project_dir%/public/uploads/Superset'
 
   Hydra\SupersetBundle\Command\CaopImportCommand:
     tags:
