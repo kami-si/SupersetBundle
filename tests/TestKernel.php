@@ -3,6 +3,7 @@
 namespace Hydra\SupersetBundle\Tests;
 
 use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
+use Exception;
 use Hydra\SupersetBundle\HydraSupersetBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\MakerBundle\MakerBundle;
@@ -23,8 +24,12 @@ final class TestKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader): void
     {
-        $loader->load(__DIR__ . '/../config/packages/prophet.yaml');
-        $loader->load(__DIR__ . '/../config/superset.yaml');
-        $loader->load(__DIR__ . '/../config/packages/maker.yaml');
+        try {
+            $loader->load(__DIR__ . '/../config/packages/prophet.yaml');
+            $loader->load(__DIR__ . '/../config/superset.yaml');
+            $loader->load(__DIR__ . '/../config/packages/maker.yaml');
+        } catch (Exception $e) {
+            die('Unable to load config files: ' . $e->getMessage());
+        }
     }
 }
