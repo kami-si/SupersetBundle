@@ -6,7 +6,7 @@ composer.lock export-ignore
 
 /bin/ export-ignore
 
-/config/maker.yaml export-ignore
+/config/packages/ export-ignore
 
 .php-cs-fixer.dist.php export-ignore
 
