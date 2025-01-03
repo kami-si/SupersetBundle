@@ -14,6 +14,14 @@ git clone https://forge.kami.lvmh/git/KAMI/SupersetBundle.git
 composer install
 ```
 
+### 3. Mettre en place la base de données de dev
+
+Pour ça il sera nécessaire de cloner Hydra et de lancer ses containers docker à l'aide de la commande suivante :
+
+```bash
+sudo docker compose up -d
+```
+
 ## Travailler sur une issue
 
 ### 1. Important à savoir
