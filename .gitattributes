@@ -1,15 +1,13 @@
 .gitignore export-ignore
 
-/tests/ export-ignore
-
-/bin/ export-ignore
-
-/config/packages/ export-ignore
+/tests export-ignore
+/bin export-ignore
+/config/packages export-ignore
+.env export-ignore
+/migrations export-ignore
 
 .php-cs-fixer.dist.php export-ignore
-
 phpunit.xml.dist export-ignore
-
 phpstan.dist.neon export-ignore
 
 README.md export-ignore
