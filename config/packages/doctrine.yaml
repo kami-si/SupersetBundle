@@ -1,17 +1,17 @@
 doctrine:
   dbal:
-    default_connection: default
+    default_connection: superset
     connections:
-      default:
+      superset:
         url: '%env(resolve:SUPERSET_DATABASE_URL)%'
 
   orm:
     auto_generate_proxy_classes: true
     enable_lazy_ghost_objects: true
-    default_entity_manager: default
+    default_entity_manager: superset
     entity_managers:
-      default:
-        connection: default
+      superset:
+        connection: superset
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: true
         mappings:
