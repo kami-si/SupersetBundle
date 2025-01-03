@@ -20,11 +20,13 @@
   "require-dev": {
     "composer/semver": "^3.0",
     "doctrine/doctrine-bundle": "^2.5.0",
+    "doctrine/doctrine-migrations-bundle": "^3.3",
     "doctrine/orm": "^2.15|^3",
     "php-cs-fixer/shim": "^v3.64",
     "phpspec/prophecy": "^1.0@dev",
     "phpstan/phpstan": "2.1.x-dev",
     "phpunit/phpunit": "11.5.x-dev",
+    "symfony/dotenv": "^7.2",
     "symfony/http-client": "7.2.*",
     "symfony/maker-bundle": "^1.61",
     "symfony/phpunit-bridge": "7.2.*",
@@ -52,5 +54,12 @@
     "psr-4": {
       "Hydra\\SupersetBundle\\Tests\\": "tests/"
     }
+  },
+  "scripts": {
+    "reset-env": [
+      "symfony console doctrine:database:drop --force",
+      "symfony console doctrine:database:create",
+      "symfony console doctrine:migrations:migrate --no-interaction"
+    ]
   }
 }

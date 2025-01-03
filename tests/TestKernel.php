@@ -3,6 +3,7 @@
 namespace Hydra\SupersetBundle\Tests;
 
 use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
+use Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle;
 use Exception;
 use Hydra\SupersetBundle\HydraSupersetBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
@@ -17,6 +18,7 @@ final class TestKernel extends Kernel
         return [
             new FrameworkBundle(),
             new DoctrineBundle(),
+            new DoctrineMigrationsBundle(),
             new MakerBundle(),
             new HydraSupersetBundle(),
         ];
@@ -28,6 +30,8 @@ final class TestKernel extends Kernel
             $loader->load(__DIR__ . '/../config/packages/prophet.yaml');
             $loader->load(__DIR__ . '/../config/superset.yaml');
             $loader->load(__DIR__ . '/../config/packages/maker.yaml');
+            $loader->load(__DIR__ . '/../config/packages/doctrine.yaml');
+            $loader->load(__DIR__ . '/../config/packages/doctrine_migrations.yaml');
         } catch (Exception $e) {
             die('Unable to load config files: ' . $e->getMessage());
         }
