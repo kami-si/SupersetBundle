@@ -10,4 +10,4 @@
 phpunit.xml.dist export-ignore
 phpstan.dist.neon export-ignore
 
-README.md export-ignore
+*.md export-ignore
