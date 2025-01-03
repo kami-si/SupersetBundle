@@ -22,6 +22,9 @@ Pour ça il sera nécessaire de cloner Hydra et de lancer ses containers docker 
 sudo docker compose up -d
 ```
 
+Notez qu'il n'est (au moins pour le moment) pas possible d'accéder à la base de données de production depuis ce 
+bundle seul, il faudra pour ça passer par Hydra.
+
 ## Travailler sur une issue
 
 ### 1. Important à savoir
