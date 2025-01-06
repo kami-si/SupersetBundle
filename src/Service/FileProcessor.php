@@ -3,22 +3,25 @@
 namespace Hydra\SupersetBundle\Service;
 
 use Hydra\SupersetBundle\Entity\Caop;
+use Hydra\SupersetBundle\Event\SupersetImportEvent;
 use Hydra\SupersetBundle\Repository\CaopRepository;
 use Hydra\SupersetBundle\Repository\PaysRepository;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Exception;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Throwable;
 
 final readonly class FileProcessor
 {
     public function __construct(
-        private EntityManagerInterface $entityManager,
-        private CaopRepository         $caopRepository,
-        private PaysRepository         $paysRepository,
-        private ManagerRegistry        $doctrine,
-        private string                 $dir,
+        private EntityManagerInterface   $entityManager,
+        private CaopRepository           $caopRepository,
+        private PaysRepository           $paysRepository,
+        private ManagerRegistry          $doctrine,
+        private EventDispatcherInterface $eventDispatcher,
+        private string                   $dir,
     ) {}
 
     /**
@@ -213,6 +216,10 @@ final readonly class FileProcessor
             $responseBody['message'] = $e->getMessage();
         }
 
+        // Firing custom event for mail sending
+        $this->eventDispatcher->dispatch(new SupersetImportEvent($responseBody, 'caop'), 'superset:caop:import');
+
+        // Returning data for symfony custom command handling
         return $responseBody;
     }
 }
