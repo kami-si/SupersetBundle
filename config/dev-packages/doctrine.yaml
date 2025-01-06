@@ -16,9 +16,9 @@ doctrine:
         auto_mapping: true
         mappings:
           HydraSupersetBundle:
-            is_bundle: true
             type: attribute
-            dir: 'src/Entity'
+            is_bundle: false
+            dir: '%kernel.project_dir%/src/Entity'
             prefix: 'Hydra\SupersetBundle\Entity'
     controller_resolver:
       auto_mapping: false

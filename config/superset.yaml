@@ -13,6 +13,7 @@ services:
   Hydra\SupersetBundle\Service\FileProcessor:
     public: true
     arguments:
+      $entityManager: '@doctrine.orm.superset_entity_manager'
       $dir: '%kernel.project_dir%/public/uploads/Superset'
 
   Hydra\SupersetBundle\Command\CaopImportCommand:
