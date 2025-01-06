@@ -165,7 +165,7 @@ final readonly class FileProcessor
                                     try {
                                         // Resetting EM here if needed because each time we flush an error it will close
                                         if (!$this->entityManager->isOpen()) {
-                                            $this->doctrine->resetManager();
+                                            $this->doctrine->resetManager('superset');
                                         }
 
                                         $this->persistCaopLine($line, $groupsData);
