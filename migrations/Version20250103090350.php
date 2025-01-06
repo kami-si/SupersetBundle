@@ -9,7 +9,7 @@ final class Version20250103090350 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return 'Populates pays table.';
+        return 'Populates pays table';
     }
 
     public function up(Schema $schema): void
@@ -256,6 +256,5 @@ final class Version20250103090350 extends AbstractMigration
         $this->addSql("INSERT INTO public.pays (code, alpha2, alpha3, nom_en_gb, nom_fr_fr) VALUES (891, 'CS', 'SCG', 'Serbia and Montenegro', 'Serbie-et-Monténégro')");
         $this->addSql("INSERT INTO public.pays (code, alpha2, alpha3, nom_en_gb, nom_fr_fr) VALUES (894, 'ZM', 'ZMB', 'Zambia', 'Zambie')");
         $this->addSql("INSERT INTO public.pays (code, alpha2, alpha3, nom_en_gb, nom_fr_fr) VALUES (499, 'ME', 'MNE', 'Monténégro', 'Monténégro')");
-
     }
 }
