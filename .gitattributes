@@ -2,7 +2,7 @@
 
 /tests export-ignore
 /bin export-ignore
-/config/packages export-ignore
+/config/dev-packages export-ignore
 .env export-ignore
 /migrations export-ignore
 
