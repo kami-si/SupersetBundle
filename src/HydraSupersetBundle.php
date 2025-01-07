@@ -8,6 +8,10 @@ use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 final class HydraSupersetBundle extends AbstractBundle
 {
+    /**
+     * @inheritDoc
+     * @return ExtensionInterface|null
+     */
     public function getContainerExtension(): ?ExtensionInterface
     {
         if (is_null($this->extension)) {
