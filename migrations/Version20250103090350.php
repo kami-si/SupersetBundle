@@ -257,4 +257,9 @@ final class Version20250103090350 extends AbstractMigration
         $this->addSql("INSERT INTO public.pays (code, alpha2, alpha3, nom_en_gb, nom_fr_fr) VALUES (894, 'ZM', 'ZMB', 'Zambia', 'Zambie')");
         $this->addSql("INSERT INTO public.pays (code, alpha2, alpha3, nom_en_gb, nom_fr_fr) VALUES (499, 'ME', 'MNE', 'Monténégro', 'Monténégro')");
     }
+
+    public function down(Schema $schema): void
+    {
+        $this->addSql("TRUNCATE TABLE pays");
+    }
 }
