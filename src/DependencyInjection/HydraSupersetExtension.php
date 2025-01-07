@@ -10,6 +10,9 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 class HydraSupersetExtension extends Extension
 {
+    /**
+     * @throws Exception
+     */
     public function load(array $configs, ContainerBuilder $container): void
     {
         $loader = new YamlFileLoader(
@@ -17,10 +20,6 @@ class HydraSupersetExtension extends Extension
             new FileLocator(__DIR__ . '/../../config'),
         );
 
-        try {
-            $loader->load('superset.yaml');
-        } catch (Exception $e) {
-            die('Unable to load config file superset.yaml: ' . $e->getMessage());
-        }
+        $loader->load('superset.yaml');
     }
 }
