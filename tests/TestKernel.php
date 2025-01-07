@@ -24,16 +24,15 @@ final class TestKernel extends Kernel
         ];
     }
 
+    /**
+     * @throws Exception
+     */
     public function registerContainerConfiguration(LoaderInterface $loader): void
     {
-        try {
-            $loader->load(__DIR__ . '/../config/dev-packages/prophet.yaml');
-            $loader->load(__DIR__ . '/../config/superset.yaml');
-            $loader->load(__DIR__ . '/../config/dev-packages/maker.yaml');
-            $loader->load(__DIR__ . '/../config/dev-packages/doctrine.yaml');
-            $loader->load(__DIR__ . '/../config/dev-packages/doctrine_migrations.yaml');
-        } catch (Exception $e) {
-            die('Unable to load config files: ' . $e->getMessage());
-        }
+        $loader->load(__DIR__ . '/../config/dev-packages/prophet.yaml');
+        $loader->load(__DIR__ . '/../config/superset.yaml');
+        $loader->load(__DIR__ . '/../config/dev-packages/maker.yaml');
+        $loader->load(__DIR__ . '/../config/dev-packages/doctrine.yaml');
+        $loader->load(__DIR__ . '/../config/dev-packages/doctrine_migrations.yaml');
     }
 }
