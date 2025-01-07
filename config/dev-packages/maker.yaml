@@ -1,2 +1,2 @@
 maker:
-  root_namespace: '\Hydra\SupersetBundle'
+  root_namespace: 'Hydra\SupersetBundle'
