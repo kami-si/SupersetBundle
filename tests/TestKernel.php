@@ -30,7 +30,7 @@ final class TestKernel extends Kernel
     public function registerContainerConfiguration(LoaderInterface $loader): void
     {
         $loader->load(__DIR__ . '/../config/dev-packages/prophet.yaml');
-        $loader->load(__DIR__ . '/../config/superset.yaml');
+        $loader->load(__DIR__ . '/../config/services.yaml');
         $loader->load(__DIR__ . '/../config/dev-packages/maker.yaml');
         $loader->load(__DIR__ . '/../config/dev-packages/doctrine.yaml');
         $loader->load(__DIR__ . '/../config/dev-packages/doctrine_migrations.yaml');

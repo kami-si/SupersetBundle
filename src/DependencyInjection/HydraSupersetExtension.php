@@ -21,6 +21,6 @@ class HydraSupersetExtension extends Extension
             new FileLocator(__DIR__ . '/../../config'),
         );
 
-        $loader->load('superset.yaml');
+        $loader->load('services.yaml');
     }
 }
