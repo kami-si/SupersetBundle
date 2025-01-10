@@ -15,7 +15,7 @@ trait ImportLogger
     protected function logImport(string $tableName): void
     {
         $import = new Import();
-        $import->setTable($tableName);
+        $import->setName($tableName);
 
         if (!$this->entityManager->isOpen()) {
             $this->doctrine->resetManager('superset');

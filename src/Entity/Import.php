@@ -17,7 +17,7 @@ class Import
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $table = null;
+    private ?string $name = null;
 
     #[ORM\Column(type: Types::DATE_IMMUTABLE)]
     private ?DateTimeImmutable $updatedAt = null;
@@ -27,14 +27,14 @@ class Import
         return $this->id;
     }
 
-    public function getTable(): ?string
+    public function getName(): ?string
     {
-        return $this->table;
+        return $this->name;
     }
 
-    public function setTable(string $table): static
+    public function setName(string $name): static
     {
-        $this->table = $table;
+        $this->name = $name;
 
         return $this;
     }
@@ -54,6 +54,6 @@ class Import
     #[ORM\PrePersist]
     public function setUpdatedAtValue(): void
     {
-        $this->updatedAt = new DateTimeImmutable(timezone: 'Europe/Paris');
+        $this->updatedAt = new DateTimeImmutable();
     }
 }
