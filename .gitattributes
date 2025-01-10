@@ -1,5 +1,6 @@
 .gitignore export-ignore
 
+/public
 /tests export-ignore
 /bin export-ignore
 /config/dev-packages export-ignore
