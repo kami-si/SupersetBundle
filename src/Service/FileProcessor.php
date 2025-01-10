@@ -15,6 +15,8 @@ use Throwable;
 
 final readonly class FileProcessor
 {
+    use ImportLogger;
+
     public function __construct(
         private EntityManagerInterface   $entityManager,
         private CaopRepository           $caopRepository,
@@ -211,6 +213,8 @@ final readonly class FileProcessor
             }, ['successes' => 0, 'failures' => 0, 'time' => 0]);
 
             $responseBody['message'] = 'CAOP data imported successfully.';
+
+            $this->logImport('caop');
         } catch (Throwable $e) {
             $responseBody['success'] = false;
             $responseBody['message'] = $e->getMessage();
